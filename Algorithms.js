@@ -18,12 +18,7 @@ var isSumPossible = function(arr, sum){
     //(a) skip first combination.  when i is 0, the statement 0 & (anything) will always be zero. false and anything is always false.
     //(b) skip second combination. 1 & (1 << j) will only be true once, when j is 1.  since it's only true once, the combination sum will be the sum of one number. since the
     //number we are searching for is not in the list, it will never be the combination for which we are looking
-    for(var i = 3; i < combinations; i++){
-
-        //if power of 2, continue.  power of 2 will yield only item in combination.
-        if((i & (i-1)) === 0){
-            continue;
-        }
+    for(var i = 1; i < combinations; i++){
 
         var combinationSum = 0;
         for(var j = 0; j < arrayLength; j++){
