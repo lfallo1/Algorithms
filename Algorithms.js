@@ -26,14 +26,11 @@ var isSumPossible = function(arr, sum){
             //get combination using bitwise and, and shifting 1 to right each iteration
             if(i & (1 << j)){
                 combinationSum += arr[j];
-
-                //check if combinationSum matches what we are looking for
-                if(combinationSum === sum){
-            		console.log('found combo');
-            		return true;
-        		}
             }
-
+        }
+        if(combinationSum === sum){
+            console.log('found combo');
+            return true;
         }
     }
     console.log('no combo found');
